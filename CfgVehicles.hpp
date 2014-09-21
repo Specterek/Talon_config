@@ -463,22 +463,22 @@ class CfgVehicles {
 				damping = 75.0;
 				steering = 0;
 				side = "left";
-				weight = 100;
-				mass = 100;
-				MOI = 20;
+				weight = 5;
+				mass = 5;
+				MOI = 250;
 				latStiffX = 25;
 				latStiffY = 280;
 				longitudinalStiffnessPerUnitGravity = 100000;
 				maxBrakeTorque = 10000;
-				sprungMass = 2625.0;
-				springStrength = 200000;
-				springDamperRate = 24000;
+				sprungMass = 20.0;
+				springStrength = 500;
+				springDamperRate = 40;
 				dampingRate = 1.0;
 				dampingRateInAir = 4864.0;
 				dampingRateDamaged = 10.0;
 				dampingRateDestroyed = 10000;
-				maxDroop = 0.18;
-				maxCompression = 0.18;
+				maxDroop = 0.01;
+				maxCompression = 0.01;
 				frictionVsSlipGraph[] = {{0, 5}, {0.5, 5}, {1, 5}};
 			};
 
@@ -486,22 +486,22 @@ class CfgVehicles {
 				boneName = "wheel_podkoloL3";
 				center = "wheel_1_3_axis";
 				boundary = "wheel_1_3_bound";
-				sprungMass = 1500.0;
-				springStrength = 37500;
-				springDamperRate = 7500;
-				maxDroop = 0;
-				maxCompression = 0;
+				sprungMass = 5.0;
+				springStrength = 500;
+				springDamperRate = 40;
+				maxDroop = 0.01;
+				maxCompression = 0.01;
 			};
 
 			class L1 : L2 {
 				boneName = "wheel_podkoloL1";
 				center = "wheel_1_1_axis";
 				boundary = "wheel_1_1_bound";
-				sprungMass = 1500.0;
-				springStrength = 37500;
-				springDamperRate = 7500;
-				maxDroop = 0;
-				maxCompression = 0;
+				sprungMass = 5.0;
+				springStrength = 500;
+				springDamperRate = 40;
+				maxDroop = 0.01;
+				maxCompression = 0.01;
 			};
 
 			class R2 : L2 {
@@ -515,22 +515,22 @@ class CfgVehicles {
 				boneName = "wheel_podkoloP3";
 				center = "wheel_2_3_axis";
 				boundary = "wheel_2_3_bound";
-				sprungMass = 1500.0;
-				springStrength = 37500;
-				springDamperRate = 7500;
-				maxDroop = 0;
-				maxCompression = 0;
+				sprungMass = 5.0;
+				springStrength = 500;
+				springDamperRate = 40;
+				maxDroop = 0.01;
+				maxCompression = 0.01;
 			};
 
 			class R1 : R2 {
 				boneName = "wheel_podkoloP1";
 				center = "wheel_2_1_axis";
 				boundary = "wheel_2_1_bound";
-				sprungMass = 1500.0;
-				springStrength = 37500;
-				springDamperRate = 7500;
-				maxDroop = 0;
-				maxCompression = 0;
+				sprungMass = 5.0;
+				springStrength = 500;
+				springDamperRate = 40;
+				maxDroop = 0.01;
+				maxCompression = 0.01;
 			};
 		};
 
@@ -564,25 +564,6 @@ class CfgVehicles {
 
 			class MainGun : Turret {};
 
-			class muzzle_rot_MG {
-				source = "ammorandom";
-				weapon = HMG_127;
-			};
-
-			class muzzle_rot_GMG {
-				source = "ammorandom";
-				weapon = "GMG_UGV_40mm";
-			};
-
-			class muzzle_hide_MG {
-				source = "reload";
-				weapon = HMG_127;
-			};
-
-			class muzzle_hide_GMG {
-				source = "reload";
-				weapon = "GMG_UGV_40mm";
-			};
 		};
 		cargoCanControlUAV = 0;
 		maxSpeed = 20;	// max speed on level road, km/h
@@ -595,7 +576,7 @@ class CfgVehicles {
 		precision = 20;
 		brakeDistance = 3.0;	// vehicle movement precision
 		acceleration = 15;
-		armor = 30;
+		armor = 100;
 		armorStructural = 4;
 		damageResistance = 0.00719;
 		canFloat = false;
@@ -630,10 +611,6 @@ class CfgVehicles {
 		ejectDeadCargo = false;
 		ejectDeadDriver = false;
 		ejectDeadCommander = 0;
-		smokeLauncherGrenadeCount = 8;
-		smokeLauncherVelocity = 14;
-		smokeLauncherOnTurret = 0;
-		smokeLauncherAngle = 360;
 
 	class HitPoints : HitPoints {
 			class HitHull : HitHull {
@@ -644,7 +621,7 @@ class CfgVehicles {
 				passThrough = true;
 				minimalHit = 0.2;
 				explosionShielding = 0.2;
-				radius = 0.25;
+				radius = 0.025;
 			};
 
 			class HitEngine : HitEngine {
@@ -654,7 +631,7 @@ class CfgVehicles {
 				passThrough = 0.5;
 				minimalHit = 0.2;
 				explosionShielding = 0.2;
-				radius = 0.25;
+				radius = 0.035;
 			};
 
 			class HitLTrack : HitLTrack {
@@ -664,7 +641,7 @@ class CfgVehicles {
 				passThrough = false;
 				minimalHit = 0.15;
 				explosionShielding = 0.4;
-				radius = 0.3;
+				radius = 0.03;
 			};
 
 			class HitRTrack : HitRTrack {
@@ -674,7 +651,7 @@ class CfgVehicles {
 				passThrough = false;
 				minimalHit = 0.15;
 				explosionShielding = 0.4;
-				radius = 0.3;
+				radius = 0.03;
 			};
 		};
 		weapons[] = {""};
@@ -701,57 +678,6 @@ class CfgVehicles {
 			};
 		};
 
-		class Reflectors {
-			class Left {
-				color[] = {1900, 1800, 1700};
-				ambient[] = {5, 5, 5};
-				position = "Light_L";
-				direction = "Light_L_end";
-				hitpoint = "Light_L";
-				selection = "Light_L";
-				size = 1;
-				innerAngle = 100;
-				outerAngle = 179;
-				coneFadeCoef = 10;
-				intensity = 1;
-				useFlare = 0;
-				dayLight = 0;
-				flareSize = 1.0;
-
-				class Attenuation {
-					start = 1.0;
-					constant = 0;
-					linear = 0;
-					quadratic = 0.25;
-					hardLimitStart = 30;
-					hardLimitEnd = 60;
-				};
-			};
-
-			class Right : Left {
-				position = "Light_R";
-				direction = "Light_R_end";
-				hitpoint = "Light_R";
-				selection = "Light_R";
-			};
-
-			class Right2 : Right {
-				position = "light_R_flare";
-				useFlare = 1;
-			};
-
-			class Left2 : Left {
-				position = "light_L_flare";
-				useFlare = 1;
-			};
-
-			class Left3 : Left2 {
-				position = "light_L_flare2";
-				flareSize = 0.3;
-			};
-		};
-		aggregateReflectors[] = {{"Left", "Left2", "Left3", "Right", "Right2"}};
-
 		class Damage {
 			tex[] = {};
 			mat[] = {"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext.rvmat", "A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext_damage.rvmat", "A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext_destruct.rvmat", "A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int.rvmat", "A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int_damage.rvmat", "A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int_destruct.rvmat"};
@@ -759,7 +685,7 @@ class CfgVehicles {
 	};
 
 		class UGV_talon_rcws_base_F : UGV_talon_base_F {
-		author = "$STR_A3_Bohemia_Interactive";
+		author = "Specter";
 		_generalMacro = "UGV_01_rcws_base_F";
 		displayName = "$STR_A3_CfgVehicles_UGV_01_RCWS_Base0";
 
@@ -793,24 +719,30 @@ class CfgVehicles {
 				gunnerForceOptics = true;
 				gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_F.p3d";
 				turretInfoType = "RscOptics_UGV_gunner";
-				weapons[] = {HMG_127, "GMG_UGV_40mm"};
-				magazines[] = {"500Rnd_127x99_mag", "500Rnd_127x99_mag", "200Rnd_40mm_G_belt"};
+				weapons[] = {"put"};
+				magazines[] = {};
 				soundServo[] = {"A3\sounds_f\dummysound", db-40, 1.0, 10};
-				minElev = -10;
-				maxElev = 60;
+                maxHorizontalRotSpeed = 1.8;	// 1 = 45°/sec
+                maxVerticalRotSpeed = 1.8;		// 1 = 45°/sec
+				minElev = -25;
+				maxElev = 30;
+                initElev=0;
+                minTurn=-75;
+                maxTurn=+75;
+                initTurn=0;
 				forceHideGunner = true;
 				outGunnerMayFire = true;
-				discreteDistance[] = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500};
+				discreteDistance[] = {1, 5, 10};
 				discreteDistanceInitIndex = 2;
-				stabilizedInAxes = 3;
+				stabilizedInAxes = StabilizedInAxesBoth;
 				gunnerInAction = "Disabled";
 				gunnerAction = "Disabled";
 
 				class ViewOptics : RCWSOptics {
 					visionMode[] = {"Normal", "TI"};
-					initFov = 0.4667;
-					maxFov = 0.4667;
-					minFov = 0.035;
+					initFov = 0.75;
+					maxFov = 0.75;
+					minFov = 0.375;
 					directionStabilized = 1;
 				};
 			};
@@ -818,7 +750,7 @@ class CfgVehicles {
 	};
 
 	class B_UGV_talon_rcws_F : UGV_talon_rcws_base_F {
-		author = "$STR_A3_Bohemia_Interactive";
+		author = "Specter";
 		_generalMacro = "B_UGV_talon_rcws_F";
 		scope = public;
 		crew = B_UAV_AI;
